@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial Práctico 2</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Color de fondo */
+            color: #333; /* Color del texto */
+        }
+
+        header {
+            background: #4a90e2; /* Color del banner */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background: #333;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #4a90e2;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .galeria {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que las imágenes se envuelvan si es necesario */
+        }
+
+        .imagen {
+            text-align: center; /* Centrar el texto */
+            margin: 10px; /* Espaciado alrededor de cada imagen */
+            max-width: 120px; /* Ancho máximo para cada imagen */
+        }
+
+        .imagen img {
+            width: 100%; /* Hacer que la imagen ocupe el 100% del contenedor */
+            height: auto; /* Mantener la proporción */
+            border-radius: 8px; /* Bordes redondeados */
+            transition: transform 0.2s; /* Efecto de hover */
+        }
+
+        .imagen img:hover {
+            transform: scale(1.05); /* Aumentar tamaño al pasar el ratón */
+        }
+
+        .imagen p {
+            margin-top: 5px; /* Espacio entre la imagen y el texto */
+            font-weight: bold; /* Hacer el texto en negrita */
+            color: #333; /* Color del texto */
+        }
+
+        .formulario {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .formulario input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .formulario button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .formulario button:hover {
+            background: #357ab8; /* Efecto hover en botones */
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner -->
+    <header>
+        <h1>Parcial Práctico 2</h1>
+    </header>
+
+    <!-- Menú -->
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Acerca de</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <h2>Galería de Imágenes</h2>
+        <div class="galeria">
+            <div class="imagen">
+                <img src="imagen1.jpeg" alt="Joseph Forero" title="Coloreado por Joseph Forero">
+                <p>Coloreado por Joseph Forero</p>
+            </div>
+            <div class="imagen">
+                <img src="imagen2.jpeg" alt="Camilo Perez" title="Coloreado por Camilo Perez">
+                <p>Coloreado por Camilo Perez</p>
+            </div>
+            <div class="imagen">
+                <img src="imagen3.jpeg" alt="Jeison Lopez" title="Coloreado por Jeison Lopez">
+                <p>Coloreado por Jeison Lopez</p>
+            </div>
+        </div>
+
+        <!-- Formulario CRUD -->
+        <section class="formulario">
+            <h2>Formulario CRUD</h2>
+            <form action="process.php" method="POST">
+                <input type="text" name="Sport ID" placeholder="Sport ID" required>
+                <input type="text" name="Title" placeholder="Title" required>
+                <input type="text" name="Overview" placeholder="Overview" required>
+                <input type="text" name="Regulations" placeholder="Regulations" required>
+                <input type="text" name="Squad" placeholder="Squad" required>
+                <input type="text" name="Athletes" placeholder="Athletes" required>
+                <input type="text" name="Gear" placeholder="Gear" required>
+                <input type="text" name="Fan Base" placeholder="Fan Base" required>
+                <input type="text" name="Organizing Authority" placeholder="Organizing Authority" required>
+                <button type="submit" name="accion" value="crear">Crear</button>
+                <button type="submit" name="accion" value="leer">Leer</button>
+                <button type="submit" name="accion" value="actualizar">Actualizar</button>
+                <button type="submit" name="accion" value="eliminar">Eliminar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Enlaza tu JS -->
+</body>
+</html>
+
